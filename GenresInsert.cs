@@ -38,6 +38,7 @@ namespace BulkInsert
             SqlBulkCopy bulkCopy = new SqlBulkCopy(connection, SqlBulkCopyOptions.KeepNulls, null);
             bulkCopy.DestinationTableName = "Genres";
             bulkCopy.WriteToServer(genreTable);
+            bulkCopy.BulkCopyTimeout = 0;
         }       
 
         public static void AddValueToRow(int? value, DataRow row, string columnName)

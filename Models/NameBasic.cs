@@ -13,12 +13,11 @@ namespace BulkInsert.Models
         public string primaryName { get; set; }
         public int? birthYear { get; set; }
         public int? deathYear { get; set; }
-        public string primaryProfession { get; set; }
+        //public string primaryProfession { get; set; }
         //public string knownForTitles { get; set; }
 
         public NameBasic()
         {
-
         }
 
         public NameBasic(string[] splitLine)
@@ -27,7 +26,7 @@ namespace BulkInsert.Models
             primaryName = splitLine[1];
             birthYear = CheckIntForNull(splitLine[2]);
             deathYear = CheckIntForNull(splitLine[3]);
-            primaryProfession = splitLine[4];
+            //primaryProfession = splitLine[4];
             //knownForTitles = splitLine[5];
         }
 
@@ -63,7 +62,7 @@ namespace BulkInsert.Models
                 deathYear = int.Parse(sqlReader["deathYear"].ToString());
             }
 
-            primaryProfession = sqlReader["primaryProfession"].ToString();
+            //primaryProfession = sqlReader["primaryProfession"].ToString();
             //knownForTitles = sqlReader["knownForTitles"].ToString();
         }
     }
